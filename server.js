@@ -13,5 +13,7 @@ app.get("/newClass", (req, res) => {
   res.send(yourNewClass);
 });
 
-app.listen(3001);
+app.use(express.static("public"));
+
+app.listen(process.env.PORT);
 console.log("backend started");
