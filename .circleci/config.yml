@@ -29,13 +29,11 @@ jobs:
 workflows:
   workflow-tp2:
     jobs:
-      - checkoutAndTest
-      - node/test:
-          requires:
-            - checkoutAndTest
+      - checkoutAndTest:
+          - node/test
       - integrateFrontend:
           requires:
-            - node/test
+            - checkoutAndTest
       - deploy:
           requires:
             - integrateFrontend
