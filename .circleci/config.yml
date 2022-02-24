@@ -28,7 +28,7 @@ jobs:
     
 workflows:
   workflow-tp2:
-    job:
+    jobs:
       - checkoutAndTest
       - node/test:
           requires:
