@@ -13,7 +13,7 @@ jobs:
       - run: git clone https://github.com/shagaut/3w5-h22-tp2-frontend.git frontend
       - run: git clone https://github.com/shagaut/3w5-h22-tp2-backend.git backend
       - run: cd frontend && npm i && npm build
-      - run: cd ../backend && mkdir public
+      - run: cd backend && mkdir public
       - run: cp -rT frontend/public backend/public
       - persist_to_workspace:
           root: .
