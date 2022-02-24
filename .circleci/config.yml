@@ -10,7 +10,7 @@ jobs:
       - node/install:
           install-yarn: true
           node-version: '17.4.0'
-      -node/test
+      - node/test
   integrateFrontend:
     machine: true
     steps:
