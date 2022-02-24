@@ -6,7 +6,6 @@ jobs:
   checkoutAndTest:
     docker:
       - image: cimg/node:17.4.0
-    machine: true
     steps:
       - checkout
       - node/test
