@@ -11,11 +11,11 @@ jobs:
   integrateFrontend:
     machine: true
     steps:
-      - git clone https://github.com/shagaut/3w5-h22-tp2-frontend.git frontend
-      - git clone https://github.com/shagaut/3w5-h22-tp2-backend.git backend
-      - cd frontend && npm i && npm build
-      - cd ../backend && mkdir public
-      - cp -rT frontend/public backend/public
+      - run: git clone https://github.com/shagaut/3w5-h22-tp2-frontend.git frontend
+      - run: git clone https://github.com/shagaut/3w5-h22-tp2-backend.git backend
+      - run: cd frontend && npm i && npm build
+      - run: cd ../backend && mkdir public
+      - run: cp -rT frontend/public backend/public
       - persist_to_workspace:
           root: .
           paths:
@@ -25,7 +25,7 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-      - cd backend && ls -Rl
+      - run: cd backend && ls -Rl
     
 workflows:
   workflow-tp2:
