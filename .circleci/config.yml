@@ -1,6 +1,5 @@
 version: 2.1
 orbs:
-  eb: circleci/aws-elastic-beanstalk@2.0.1
   node: circleci/node@5.0.0
 jobs:
   checkoutAndTest:
@@ -8,11 +7,7 @@ jobs:
       - image: cimg/node:17.4.0
     steps:
       - checkout
-      - run: node --version
-      - run: npm --version
-      - run: npm install
-      - run: npm run test
-      - node/test
+      - run: node/test
   integrateFrontend:
     machine: true
     steps:
